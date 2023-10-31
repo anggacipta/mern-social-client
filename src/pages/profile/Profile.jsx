@@ -18,7 +18,7 @@ export default function Profile() {
       setUsers(response.data)
     }
     fetchUser();
-  },[])
+  },[username])
 
   return (
     <>
@@ -30,12 +30,12 @@ export default function Profile() {
             <div className="profileCover">
               <img
                 className="profileCoverImg"
-                src={users.coverPicture || PF+"person/noCover.png"}
+                src={users.coverPicture ? PF+users.coverPicture : PF+"person/noCover.png"}
                 alt=""
               />
               <img
                 className="profileUserImg"
-                src={users.prfilePicture || PF+"person/noAvatar.png"}
+                src={users.profilePicture ? PF+users.profilePicture : PF+"person/noAvatar.png"}
                 alt=""
               />
             </div>
